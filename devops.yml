@@ -1,0 +1,12 @@
+---
+   - hosts:All
+   become:true
+   tasks:
+    - name:Installing GIT, Docker, Httpd
+      yum:
+       name:"{{}item}"
+       state:present
+      with_items:
+      - gi
+      - docker
+      - httpd
